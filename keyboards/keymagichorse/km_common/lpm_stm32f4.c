@@ -223,7 +223,7 @@ void enter_low_power_mode_prepare(void)
     // clear_keyboard();
     // layer_clear();
 
-    lpm_device_power_open();    // 外围设备 电源 关闭
+    lpm_device_power_open();    // 外围设备 电源 开启
   
     gpio_write_pin_high(BHQ_INT_PIN);
 
