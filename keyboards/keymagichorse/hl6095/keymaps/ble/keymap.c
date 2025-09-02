@@ -177,9 +177,9 @@ void lpm_device_power_close(void)
 }
 
 
-
-__attribute__((weak)) bool via_command_kb(uint8_t *data, uint8_t length) {
-    return via_command_bhq(data, length);
+// vial
+void raw_hid_receive_kb(uint8_t *data, uint8_t length) {
+    via_command_bhq(data, length);
 }
 
 
