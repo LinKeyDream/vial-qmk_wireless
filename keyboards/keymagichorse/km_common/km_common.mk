@@ -19,10 +19,12 @@ ifeq ($(strip $(BLUETOOTH_DRIVER)), bhq)
     # 低功耗
     ifeq ($(strip $(KB_LPM_ENABLED)), yes)
         OPT_DEFS += -DKB_LPM_ENABLED
+        OPT_DEFS += -DKB_LPM_DRIVER
         SRC += km_common/${KB_LPM_DRIVER}.c
     endif
 
     ifeq ($(strip $(KB_CHECK_BATTERY_ENABLED)), yes)
+        OPT_DEFS += -DKB_CHECK_BATTERY_ENABLED
         # 打开QMK的ADC读取功能
         ANALOG_DRIVER_REQUIRED = yes
         SRC += km_common/battery.c
