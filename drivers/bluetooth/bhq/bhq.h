@@ -20,8 +20,12 @@
 #include <stdbool.h>
 #include "debug.h"
 
-#include "km_printf.h"
-#define bhq_printf(format, ...) km_printf(format, ##__VA_ARGS__)
+#ifdef KM_DEBUG
+#   include "km_printf.h"
+#   define bhq_printf(format, ...) km_printf(format, ##__VA_ARGS__)
+#else
+#    define bhq_printf(format, ...)
+#endif
 
 typedef struct bhkDevConfigInfo_t
 {
